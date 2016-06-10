@@ -44,7 +44,7 @@ Crie uma função com as seguintes características:
 */
 function littlePigs (x,y,z) {
   if (x === undefined || y === undefined || z === undefined) {
-    return 'Preencha todos os valores corretamente!";
+    return 'Preencha todos os valores corretamente!';
   } else {
     return x * y * z + 2;
   }
