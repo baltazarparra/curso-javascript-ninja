@@ -78,16 +78,19 @@ function oasis (f,d,p) {
     return f;
   } else if (f !== undefined && d !== undefined && p === undefined) {
     return f + d;
+  } else if ( f !== undefined && d !== undefined && p !== undefined) {
+    return ( f + d ) / p;
+  } else if ( f === undefined && d === undefined && p === undefined ) {
+    return false;
   } else {
-  return false;
+    return null;
   }
+  
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-oasis(1);
-1
-oasis(6,6);
-12
-oasis(1, 2, 3);
-false
+oasis(); //false
+oasis(1); //1
+oasis(6,6); //12
+oasis(1, 1, 1); //2
 ```
