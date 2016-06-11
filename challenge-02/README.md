@@ -74,11 +74,20 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function oasis (f,d,p) {
-  if (f !== undefined || d !== undefined || p !== undefined) {
-    return
+  if (f !== undefined && d === undefined && p === undefined) {
+    return f;
+  } else if (f !== undefined && d !== undefined && p === undefined) {
+    return f + d;
+  } else {
+  return false;
   }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+oasis(1);
+1
+oasis(6,6);
+12
+oasis(1, 2, 3);
+false
 ```
