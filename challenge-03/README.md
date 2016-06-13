@@ -195,12 +195,35 @@ correta, de acordo com os dados inseridos no objeto.
 */
 
 pessoa.apresentacao = function () {
-  return 'Olá, eu sou o ' + pessoa.nomeCompleto() + ', ' + 'tenho ' + pessoa.idade + 'anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu caminhei ' + 'pessoa.caminhouQuantosMetros' + ' metros!';
+	var qualSexo = null;
+	var qualIdade = null;
+	var metragem = null;
+
+	if (pessoa.sexo === 'masculino') {
+		var qualSexo = 'Ola, eu sou o ';
+	} else { 
+		var qualSexo = 'Ola, eu sou a ';
+	};
+	
+	if (pessoa.idade <= 1) {
+		var qualIdade = ' ano, ';
+	} else {
+		var qualIdade = ' anos, ';
+	};
+	
+	if (pessoa.caminhouQuantosMetros <= 1) {
+		var metragem = ' metro!';
+	} else {
+		var metragem = ' metros!';
+	};
+	
+	return qualSexo + pessoa.nome + ' ' + pessoa.sobreNome + ', ' + 'tenho ' + pessoa.idade + qualIdade + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e só hoje eu caminhei ' + pessoa.caminhouQuantosMetros + metragem;
+	
 };
 
 // Agora, apresente-se ;)
 
 > pessoa.apresentacao()
-'Olá, eu sou o Lucifernandes Sataniel, tenho 670 anos, 6.66, meu peso é 100 e só hoje, eu caminhei 666 metros!'
+'Ola, eu sou o Lucifernandes Gramunhão, tenho 555 anos, 6.66, meu peso é 100 e só hoje eu caminhei 250 metros!'
 
 ```
