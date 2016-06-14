@@ -31,7 +31,21 @@ false
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+> isTruthy([]);
+true
+> isTruthy({});
+true
+> isTruthy(1);
+true
+> isTruthy("1");
+true
+> isTruthy('1');
+true
+> isTruthy('string');
+true
+> isTruthy(1+1);
+true
+
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
