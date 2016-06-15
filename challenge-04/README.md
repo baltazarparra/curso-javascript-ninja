@@ -124,17 +124,30 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
+
 carro.pegaPessoas = function (p) {
 
-  var total = carro.quantidadeDePessoas += p;
+  var total = carro.quantidadeDePessoas + p; // 11
+  var sobra = carro.assentos - carro.quantidadeDePessoas; // 0
   
-  if (total > carro.assentos ) {
-    return 'O carro já está lotado!';
+  if (carro.quantidadeDePessoas === carro.assentos) {
+    carro.quantidadeDePessoas + p;
+    return 'O carro já está lotado';
+  } else if (total <= carro.assentos) {
+    carro.quantidadeDePessoas += p;
+    return 'Já temos ' + total + ' pessoas no carro.';
+  } else {
+    var resto = carro.assentos - carro.quantidadeDePessoas;
+    if (resto === 1) {
+      var frase = 'Só resta mais 1 lugar';
+    } else {
+      var frase = 'Ainda temos mais ' + resto + ' lugares!';
+    };
+    return frase;
   };
-  
-	return 'Já temos ' + total + ' pessoas no carro.';
-};
 
+};
+  
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
