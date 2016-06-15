@@ -125,9 +125,18 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.pegaPessoas = function (p) {
-	carro.quantidadeDePessoas >= 1 ? var people = ' pessoa' : var people = ' pessoas';
+
+  if (p + carro.quantidadeDePessoa > assentos ) {
+  } else {
+  };
+  
+	if (carro.quantidadeDePessoa <= 5) {
+	  return 'O carro já está lotado!';
+	};
+	
 	carro.quantidadeDePessoas += p;
-	return 'Já temos ' + carro.quantidadeDePessoas + people + ' no carro.';
+
+	return 'Já temos ' + carro.quantidadeDePessoas + ' pessoas no carro.';
 };
 
 /*
