@@ -126,17 +126,13 @@ citado acima, no lugar de "pessoas".
 */
 carro.pegaPessoas = function (p) {
 
-  if (p + carro.quantidadeDePessoa > assentos ) {
-  } else {
+  var total = carro.quantidadeDePessoas += p;
+  
+  if (total > carro.assentos ) {
+    return 'O carro já está lotado!';
   };
   
-	if (carro.quantidadeDePessoa <= 5) {
-	  return 'O carro já está lotado!';
-	};
-	
-	carro.quantidadeDePessoas += p;
-
-	return 'Já temos ' + carro.quantidadeDePessoas + ' pessoas no carro.';
+	return 'Já temos ' + total + ' pessoas no carro.';
 };
 
 /*
