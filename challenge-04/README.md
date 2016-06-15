@@ -138,11 +138,7 @@ carro.pegaPessoas = function (p) {
     return 'Já temos ' + total + ' pessoas no carro.';
   } else {
     var resto = carro.assentos - carro.quantidadeDePessoas;
-    if (resto === 1) {
-      var frase = 'Só resta mais 1 lugar';
-    } else {
-      var frase = 'Ainda temos mais ' + resto + ' lugares!';
-    };
+    var frase = resto === 1 ? 'Só resta mais 1 lugar' : 'Ainda temos mais ' + resto + ' lugares!';
     return frase;
   };
 
