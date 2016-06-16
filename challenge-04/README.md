@@ -130,7 +130,7 @@ carro.pegaPessoas = function (p) {
   var total = carro.quantidadeDePessoas + p; // 11
   var sobra = carro.assentos - carro.quantidadeDePessoas; // 0
   
-  if (carro.quantidadeDePessoas === (carro.assentos - 1) && total >= carro.assentos) {
+  if (carro.quantidadeDePessoas === carro.assentos && total >= carro.assentos) {
     carro.quantidadeDePessoas += p;
     return 'O carro já está lotado';
   } else if (total <= carro.assentos) {
@@ -138,7 +138,7 @@ carro.pegaPessoas = function (p) {
     return 'Já temos ' + total + ' pessoas no carro.';
   } else {
     var resto = carro.assentos - carro.quantidadeDePessoas;
-    var frase = resto === 1 ? 'Só resta mais 1 lugar' : 'Ainda temos mais ' + resto + ' lugares!';
+    var frase = resto === 1 ? 'Só resta mais 1 lugar' : 'Só temos mais ' + resto + ' lugares!';
     return frase;
   };
 
@@ -152,38 +152,46 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+> carro.cor // 'Vinho'
+
 
 // Mude a cor do carro para vermelho.
-?
+> carro.cor = 'vermelho';
+
 
 // E agora, qual a cor do carro?
-?
+> carro.cor // 'Vermelho'
 
 // Mude a cor do carro para verde musgo.
-?
+> carro.cor = 'verde musgo';
 
 // E agora, qual a cor do carro?
-?
+> carro.cor // 'verde musgo';
 
 // Qual a marca e modelo do carro?
-?
+> carro.obterMarcaModelo() // 'Esse carro é um Volks Gol.'
 
 // Adicione 2 pessoas no carro.
-?
+> carro.pegaPessoas(2) // 'Já temos 2 pessoas no carro.'
+
 
 // Adicione mais 4 pessoas no carro.
-?
+> carro.pegaPessoas(4) // 'Só temos mais 3 lugares!'
+
 
 // Faça o carro encher.
-?
+> carro.pegaPessoas(1) // 'O carro já está lotado'
+
 
 // Tire 4 pessoas do carro.
-?
+> carro.pegaPessoas(-4) // 'Já temos 1 pessoas no carro.'
+
 
 // Adicione 10 pessoas no carro.
-?
+> carro.pegaPessoas(10) // 'Só temos mais 4 lugares!'
+
 
 // Quantas pessoas temos no carro?
-?
+> carro.quantidadeDePessoas // 1
+
 ```
