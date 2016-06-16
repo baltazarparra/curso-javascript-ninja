@@ -130,8 +130,8 @@ carro.pegaPessoas = function (p) {
   var total = carro.quantidadeDePessoas + p; // 11
   var sobra = carro.assentos - carro.quantidadeDePessoas; // 0
   
-  if (carro.quantidadeDePessoas === (carro.assentos - 1)) {
-    carro.quantidadeDePessoas + p;
+  if (carro.quantidadeDePessoas === (carro.assentos - 1) && total >= carro.assentos) {
+    carro.quantidadeDePessoas += p;
     return 'O carro já está lotado';
   } else if (total <= carro.assentos) {
     carro.quantidadeDePessoas += p;
