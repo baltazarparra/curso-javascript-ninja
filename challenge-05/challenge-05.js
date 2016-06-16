@@ -91,7 +91,11 @@ function book (x) {
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+> book()
+{ livro1: { quantidadePaginas: 0, autor: 'Eu Mes', editora: 'Babadook' },
+  livro2: { quantidadePaginas: 0, autor: 'Messy', editora: 'Badbad' },
+  livro3: { quantidadePaginas: 0, autor: 'Eu', editora: 'dook' } }
+
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
