@@ -72,17 +72,35 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 
+// function convertToHex(color) {
+//   switch(color) {
+//     case 'white':
+//       return '#fff';
+//     case 'black':
+//       return '#000';
+//     case 'red':
+//       return '#f00';
+//     default:
+//           return 'não temos seu hex ' + color;
+//   }
+// }
+
 function convertToHex(color) {
+  var hex;
   switch(color) {
     case 'white':
-      return '#fff';
+      hex = '#fff';
+          break;
     case 'black':
-      return '#000';
+      hex = '#000';
+      break;
     case 'red':
-      return '#f00';
+      hex = '#f00';
+      break;
     default:
-          return 'não temos seu hex ' + color;
+      return 'não temos seu hex ' + color;
   }
+  return 'seu hex é ' + hex;
 }
 
 /*
