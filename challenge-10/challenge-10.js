@@ -112,8 +112,8 @@
     variável chamada "sum", que receba a função "calculator", passando por
     parâmetro a variável que recebeu o sinal da operação.
     */
-    operationSignal = '+';
-    var sum = calculator(operationSignal);
+    // operationSignal = '+';
+    // var sum = calculator(operationSignal);
 
     /*
     PASSO 3:
@@ -127,13 +127,13 @@
     - O segundo, a função de soma, passando os dois operandos.
     - Se "sum" for "false", mostrar no console a mensagem de erro.
     */
-    if( sum ) {
-        number1 = 12;
-        number2 = 8;
-        console.log(showOperationMessage(number1, operationSignal, number2), sum(number1, number2));
-    } else {
-        console.log( showErrorMessage( operationSignal));
-    }
+    // if( sum ) {
+    //     number1 = 12;
+    //     number2 = 8;
+    //     console.log(showOperationMessage(number1, operationSignal, number2), sum(number1, number2));
+    // } else {
+    //     console.log( showErrorMessage( operationSignal));
+    // }
 
     /*
     Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
@@ -145,11 +145,10 @@
     if( sub ) {
         number1 = 22;
         number2 = 20;
-        console.log( showOperationMessage( number1, operationSignal, number2), sub(number1, number1));
+        console.log( showOperationMessage( number1, operationSignal, number2), sub(number1, number2));
     } else {
         console.log( showErrorMessage( operationSignal));
     }
-
     /*
     Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
     a mensagem de erro será mostrada no console.
@@ -157,7 +156,7 @@
     operationSignal = 'lala';
     var mod = calculator(operationSignal);
     if( mod ) {
-        console.log(showOperationMessage(number1, operationSignal, number2), sub(number1, number1));
+        console.log(showOperationMessage(number1, operationSignal, number2), sub(number1, number2));
     } else {
         console.log( showErrorMessage( operationSignal));
     }
