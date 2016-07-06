@@ -10,10 +10,9 @@
     Qual loop você deve usar para que essa mensagem seja mostrada no console?
     */
     var once =  false;
-    while (once === false) {
+    do {
         console.log('Entrou ao menos uma vez!');
-        once = true;
-    }
+    } while (once);
 
     /*
     Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -52,10 +51,7 @@
     'The person has more than 25 years old? [TRUE/FALSE]'
     */
     function moreThan (x){
-        if (person['age'] >= x) {
-            return true;
-        }
-        return false;
+        return person.age > 25;
     }
     console.log('The person has more than 25? ' + moreThan(25));
 
@@ -83,7 +79,7 @@
     */
     console.log( 'Pares de 0 a 20:' );
     var numbers = [];
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i <= 20; i++) {
         if (i % 2 !== 0) {
             continue;
         }
