@@ -10,19 +10,24 @@ Crie um objeto chamado `person`, com as propriedades:
 Preencha cada propriedade com os seus dados pessoais, respeitando o tipo
 de valor para cada propriedade.
 */
-// ?
+var person = {
+    'name': 'Sataniel',
+    'lastname': 'Luceferatus',
+    'age': 666
+};
+
 console.log( 'Propriedades de "person":' );
 
 /*
 Mostre no console, em um array, todas as propriedades do objeto acima.
 Não use nenhuma estrutura de repetição, nem crie o array manualmente.
 */
-// ?
+console.log(Object.keys(person));
 
 /*
 Crie um array vazio chamado `books`.
 */
-// ?
+var books = [];
 
 /*
 Adicione nesse array 3 objetos, que serão 3 livros. Cada livro deve ter a
@@ -30,36 +35,50 @@ seguintes propriedades:
 `name`: String
 `pages`: Number
 */
-// ?
+var livro01 = {
+    'name': 'Livro 01',
+    'pages': 2
+};
+var livro02 = {
+    'name': 'Livro 02',
+    'pages': 3
+};
+var livro03 = {
+    'name': 'Livro 03',
+    'pages': 4
+};
+books.push(livro01, livro02, livro03);
+
 console.log( '\nLista de livros:' );
 
 /*
 Mostre no console todos os livros.
 */
-// ?
+console.log(books);
 
 console.log( '\nLivro que está sendo removido:' );
 /*
 Remova o último livro, e mostre-o no console.
 */
-// ?
+var last = books.pop();
+console.log(last);
 
 console.log( '\nAgora sobraram somente os livros:' );
 /*
 Mostre no console os livros restantes.
 */
-// ?
+console.log(books);
 
 /*
 Converta os objetos que ficaram em `books` para strings.
 */
-// ?
+JSON.stringify(books);
 console.log( '\nLivros em formato string:' );
 
 /*
 Mostre os livros nesse formato no console:
 */
-// ?
+console.log(books);
 
 /*
 Converta os livros novamente para objeto.
