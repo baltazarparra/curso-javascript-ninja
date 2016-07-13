@@ -39,8 +39,8 @@
     Remova o primeiro estado do array `brasil` e mostre-o no console.
     */
     console.log( '\nEstado removido:' );
-    brasil.shift();
-    console.log(brasil);
+    var remove = brasil.shift();
+    console.log(remove);
 
     /*
     Crie um novo array chamado `newSul`, que receba somente os estados do sul,
@@ -63,7 +63,7 @@
     /*
     Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
     */
-    var nordeste = brasil.slice(0, 2);
+    var nordeste = ['Bahia', 'Ceara', 'Piaui']
 
     /*
     Mostre no console os estados do nordeste.
@@ -81,7 +81,7 @@
     Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
     ficar no mesmo nível que os estados já existentes, não em um array separado.
     */
-
+    brasil = brasil.concat(nordeste);
 
     /*
     Mostre no console os estados em `newSudeste`.
@@ -103,9 +103,12 @@
     - `estado`: que será o estado do array `brasil`.
     */
     console.log( '\nFor Each:' );
-    brasil.forEach(function (item, index, array) {
-         item = {id:index, estado:item};
-         newBrasil = item;
+    var newBrasil = []
+    brasil.forEach(function(item, index) {
+        newBrasil.push({
+            id: index,
+            Estado: item
+        });
     });
 
     /*
@@ -122,7 +125,13 @@
     - "Nem todos os estados tem mais de 7 letras!"
     */
     console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-    // ?
+    brasil.every(function(item) {
+        var letras = item.length > 7;
+        if (letras) {
+            console.log('Sim, todos os estados tem mais de 7 letras!')
+        }
+        console.log('Nem todos os estados tem mais de 7 letras!');
+    });
 
     /*
     Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -133,7 +142,13 @@
     - "Ceará não foi incluído :("
     */
     console.log( '\nCeará está incluído em `brasil`?' );
-    // ?
+    brasil.some(function(item) {
+        var ceara = item === 'Ceara';
+        if(ceara) {
+            console.log('Ceará está incluído!')
+        }
+        console.log('Ceará não foi incluído :(');
+    });
 
     /*
     Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
