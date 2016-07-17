@@ -31,7 +31,11 @@
     no console.
     */
     console.log( '\nJust module of division by 2 or 3:' );
-    // ?
+    var justMod20r3 = justNumbers.filter(function(item) {
+        return item % 2 === 0 || item % 3 === 0;
+    });
+
+    console.log(justMod20r3);
 
     /*
     Declare uma variável chamada operation que receba, do array criado acima,
@@ -42,7 +46,13 @@
     Mostre o resultado no console.
     */
     console.log( '\nOperation:' );
-    // ?
+    var operation = justMod20r3.reduce(function(total, atual) {
+        console.log(total);
+        console.log(atual);
+        return (total + 1) * atual;
+    });
+
+    console.log(operation);
 
     /*
     Faça o mesmo cálculo passado acima, mas começando do último item para o
@@ -50,8 +60,13 @@
     console.
     */
     console.log( '\nOperation 2:' );
-    // ?
+    var operation2 = justMod20r3.reduceRight(function(total, atual) {
+        console.log(total);
+        console.log(atual);
+        return (total + 1) * atual;
+    });
 
+    console.log(operation2);
     /*
     Crie um array chamado `name`. Cada elemento desse array deve ser uma sílaba
     do seu nome. Vamos reduzir esse array, juntando todas as sílabas, mas usando
@@ -61,20 +76,29 @@
     falada, como se você estivesse falando em código xD
     */
     console.log( '\nSeu nome na língua do "P":' );
-    // ?
+    var name = ['Sa', 'Ta', 'Ni', 'El'];
+    var lp = name.reduce(function(total, atual) {
+        return total + ' P ' + atual;
+    }, '');
+
+
+    console.log(lp);
 
     /*
     Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
     e atribuirá o seu nome invertido (usando o array criado acima).
     */
     console.log( '\nInversed Name:' );
-    // ?
+    var inversedName = name.reduceRight(function(total, atual) {
+        return total + ' ' + atual;
+    });
+    console.log(inversedName.toLocaleLowerCase());
 
     /*
     Mostre no console o array `numberObjects`.
     */
     console.log( '\nNumber objects' );
-    // ?
+    console.log(numberObjects);
 
     /*
     Verifique se existem em algum índice de numberObjects um objeto ìgual a
@@ -86,20 +110,32 @@
     o que acontece ;)
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
-    // ?
+    var algum = numberObjects.some(function(item) {
+        return item.number === 2;
+    });
+
+    var resposta = algum
+        ? console.log('Existe um objeto { number: 2 }')
+        : console.log('Não existe um objeto { number: 2 } em numberObjects :(');
 
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
     */
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-    // ?
+    if(numberObjects.lastIndexOf({ number: 2}, 2) >-1 ) {
+        console.log('Existe');
+    } else {
+        console.log('Não existe');
+    }
 
     /*
     Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
     formato de String.
     */
     console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-    // ?
+    if( Array.isArray(justMod20r3)) {
+        console.log(justMod20r3.toString());
+    }
 
 })();
