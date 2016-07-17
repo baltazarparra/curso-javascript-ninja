@@ -8,14 +8,22 @@
     Mostre esse array no console.
     */
     console.log( 'Number Objects Array:' );
-    // ?
+    var numberObjects = [];
+    for(var i = 1; i <= 10; i++) {
+        numberObjects.push({number: i});
+    }
+    console.log(numberObjects);
 
     /*
     Crie um array chamado `justNumbers`, que terá como elementos somente os
     números do array criado acima. Mostre esse novo array no console.
     */
     console.log( '\nJust Numbers:' );
-    // ?
+    var justNumbers = numberObjects.map(function(item) {
+        return item.number;
+    });
+
+    console.log(justNumbers);
 
     /*
     Crie um novo array chamado `justMod2Or3`, que receberá do array criado acima
