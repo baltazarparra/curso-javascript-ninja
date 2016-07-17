@@ -141,14 +141,16 @@
     Senão, mostrar a frase:
     - "Ceará não foi incluído :("
     */
+    console.log(brasil);
     console.log( '\nCeará está incluído em `brasil`?' );
-    brasil.some(function(item) {
-        var ceara = item === 'Ceara';
-        if(ceara) {
-            console.log('Ceará está incluído!')
-        }
-        console.log('Ceará não foi incluído :(');
+    var some = brasil.some(function(item) {
+        return item === 'Ceara';
     });
+    console.log(
+        some
+        ? 'Ceará incluído'
+        : 'Ceará não foi incluído'
+    );
 
     /*
     Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
