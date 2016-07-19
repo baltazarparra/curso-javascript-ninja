@@ -23,16 +23,16 @@
       que será instanciado.
     */
     function Person(name, lastName, age) {
-        this.name = 'name';
-        this.lastName = 'lastName';
-        this.age = 'age';
+        this.name = name;
+        this.lastName = lastName;
+        this.age = age;
         this.getFullName = function getFullName(n, l) {
             return this.name + ' ' + this.lastName;
         };
         this.getAge = function getAge() {
             return this.age;
         };
-        this.AddAge = function addAge() {
+        this.addAge = function addAge() {
             this.age += arguments[0];
             return this;
         };
@@ -46,20 +46,21 @@
     Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
     */
     console.log( 'Novas pessoas criadas à partir de Person:' );
-    // ?
+    var sataniel = new Person('Sataniel', 'Demovil', 666);
+    console.log(sataniel);
 
     /*
     Mostre no console o nome completo de cada pessoa.
     */
     console.log( '\nNomes das pessoas:' );
-    // ?
+    console.log(sataniel.getFullName());
 
     /*
     Mostre no console as idades de cada pessoa, com a frase:
     - "[NOME COMPLETO] tem [IDADE] anos."
     */
     console.log( '\nIdade das pessoas:' );
-    // ?
+    console.log(sataniel.getAge());
 
     /*
     Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
@@ -67,5 +68,5 @@
     - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
     */
     console.log( '\nNova idade das pessoas:' );
-    // ?
+    console.log(sataniel.getFullName() + ' agora tem ' + sataniel.addAge(1).getAge() + ' anos.');
 })();
