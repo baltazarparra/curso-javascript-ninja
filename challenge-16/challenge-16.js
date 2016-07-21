@@ -19,11 +19,14 @@
     */
     console.log( 'As letras do seu nome:' );
     var name = 'Sataniel';
-    var nameArr = name.split('');
-    nameArr.map(function(item, index) {
-        var i = index+1;
-        console.log(item + ' é a ' + i + '* letra do meu nome.');
-    });
+    for(var i =0, len =name.length; i < len; i++) {
+        console.log(name.charAt(i) + ' é a ' + (i+1) + '* letra do meu nome.');
+    }
+
+    // nameArr.map(function(item, index) {
+    //     var i = index+1;
+    //     console.log(item + ' é a ' + i + '* letra do meu nome.');
+    // });
 
 
     /*
@@ -39,7 +42,13 @@
     console.log para cada formato.
     */
     console.log( '\nNome convertido à partir de um slug:' );
-    // ?
+    var fullName = 'sataniel-demovile';
+    var newFullName = fullName.split('-').map(function(name) {
+        return name.charAt(0).toUpperCase() + name.slice(1);
+    }).join(' ');
+
+    console.log(fullName);
+    console.log(newFullName);
 
     /*
     - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
