@@ -60,7 +60,7 @@
     5 nomes foi somente uma sugestão ;)
     */
     console.log( '\nMeus amigos:' );
-    // ?
+    var friends = ['Jefferson', 'Adriano', 'Belial', 'Lucifer', 'Mal'];
 
     /*
     Usando o replace(), faça a string "Roberto" virar "Roberta".
