@@ -61,19 +61,25 @@
     */
     console.log( '\nMeus amigos:' );
     var friends = ['Jefferson', 'Adriano', 'Belial', 'Lucifer', 'Mal'];
-
+    var phrase = friends.reduce(function(total, atual, index) {
+        var separator = friends.length -1 === index ? ' e ' : ', ';
+        return total + separator + atual;
+    }).concat(' são meus amigos.');
+    console.log(friends);
+    console.log(phrase);
     /*
     Usando o replace(), faça a string "Roberto" virar "Roberta".
     Mostre o resultado no console.
     */
     console.log( '\nEra "Roberto", agora é:' );
-    // ?
+    console.log('Roberto'.replace('to', 'ta'));
 
     /*
     Mostre no console a parte "nando" da string "Fernando". Use o método que
     faz a busca do final para o início da string.
     */
     console.log( '\nParte de uma string:' );
+    console.log('Fernando'.substring(8,3));
     // ?
 
     /*
@@ -87,5 +93,10 @@
     */
     console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
     // ?
-
+    var myName = 'Sataniel';
+    var myNewName = [];
+    for(var i = 0, len = myName.length; i < len; i++) {
+        myNewName.push( i % 2 === 0 ? myName[i].toLowerCase() : myName[i].toUpperCase());
+    }
+    console.log(myNewName.join(''));
 })();
