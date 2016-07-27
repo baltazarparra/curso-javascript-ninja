@@ -19,16 +19,22 @@
     - "101.123-131x32"
     */
     console.log( 'Limpando CPFs:' );
-    function cleanCPF(cpf) {
-        cpf.replace(/(\d{3})[\s\S](\d{3})[\s\S](\d+)(.+)/g, function(reg, a, b, c, d, e){
-            console.log(reg);
-        });
-    };
 
-    console.log(cleanCPF('049-214 3421-1'));
-    console.log(cleanCPF('210.458.522-05'));
-    console.log(cleanCPF('735 500 794 - 22'));
-    console.log(cleanCPF('101.123-131x32'));
+    // function cleanCPF(cpf) {
+    //     cpf.replace(/(\d{3})[\s\S](\d{3})[\s\S](\d{3,4})[-\sx]{0,3}(\d{1,2})/g, function(reg, a, b, c, d){
+    //         console.log(a, b, c, d);
+    //     });
+    // };
+    //
+
+    function cleanCPF(cpf) {
+        return cpf.replace(/\D/g, '');
+    }
+
+    var cpfs = ['049-214 3421-1', '210.458.522-05', '735 500 794 - 22', '101.123-131x32'];
+    cpfs.forEach(function(cpf) {
+        console.log(cleanCPF(cpf));
+    });
 
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -36,7 +42,9 @@
     Mostre o resultado no console.
     */
     console.log( '\nFormatando CPFs corretamente:' );
-    // ?
+    cpfs.forEach(function(cpf) {
+        console.log(cleanCPF(cpf).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4'));
+    });
 
     /*
     Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
