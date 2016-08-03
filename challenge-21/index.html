@@ -3,9 +3,30 @@
 <head>
     <meta charset="utf-8" />
     <title>Challenge 21</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" href="milligram.min.css">
+    <style>
+        .crono {
+            width: 50%;
+            margin: 40px auto;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-
-    <script src="challenge-21.js"></script>
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <div class="crono">
+                <input type="text" value="0">
+                <button data-js="start">Começar</button>
+                <button data-js="stop">Parar</button>
+                <button data-js="reset">Reiniciar</button>
+                <script src="challenge-21.js"></script>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
