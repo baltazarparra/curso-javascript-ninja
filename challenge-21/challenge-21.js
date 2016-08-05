@@ -6,32 +6,24 @@
     var $start = document.querySelector('[data-js="start"]');
     var $stop = document.querySelector('[data-js="stop"]');
     var $reset = document.querySelector('[data-js="reset"]');
-    var counter = 0;
-    var crono;
+    var chronos;
 
-    $start.addEventListener('click', function(event) {
-        event.preventDefault();
+    $start.addEventListener('click', startChronos, false);
+    $stop.addEventListener('click', stopChronos, false);
+    $reset.addEventListener('click', resetChronos, false);
 
-        function timer() {
-            $input.value = counter++;
-        }
-        crono = setInterval(timer, 100);
+    function startChronos() {
+        $input.value = +$input.value + 1;
+        chronos = setTimeout(startChronos, 100);
+    }
 
-    }, false);
+    function stopChronos() {
+        clearTimeout(chronos);
+    }
 
-    $stop.addEventListener('click', function(event) {
-        event.preventDefault();
-
-        clearInterval(crono);
-
-    }, false);
-
-    $reset.addEventListener('click', function(event) {
-        event.preventDefault();
-
+    function resetChronos() {
         $input.value = 0;
-        clearInterval(crono);
-
-    }, false);
+        stopChronos();
+    }
 
 })(window, document);
