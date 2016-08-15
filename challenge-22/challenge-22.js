@@ -6,7 +6,15 @@
   Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
   `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
   */
-  // ?
+  pessoaUm = {
+    name: 'Sataniel',
+    lastName: 'Demonieiro'
+  }
+
+  pessoaDois = {
+    name: 'Luciferina',
+    lastName: 'Infernandes'
+  }
 
   /*
   Agora crie uma função chamada `getFullName` que retorne as propriedades
@@ -20,7 +28,12 @@
   contexto da função. Use um console.log por pessoa.
   */
   console.log( 'O nome das pessoas é:' );
-  // ?
+  function getFullName() {
+    return this.name + ' ' + this.lastName;
+  };
+
+  console.log(getFullName.call(pessoaUm));
+  console.log(getFullName.call(pessoaDois));
 
   /*
   Crie uma função chamada `sum`. Essa função pode receber uma lista de
