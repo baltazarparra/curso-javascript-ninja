@@ -1,3 +1,7 @@
+;(function(window, document) {
+
+  'use strict';
+
   /*
   Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
   `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
@@ -68,3 +72,5 @@
   */
   console.log( '\nSomar números entrados pelo usuário:' );
   // ?
+
+})(window, document);
