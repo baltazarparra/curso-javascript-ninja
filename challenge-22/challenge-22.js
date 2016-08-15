@@ -6,12 +6,12 @@
   Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
   `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
   */
-  pessoaUm = {
+  var pessoaUm = {
     name: 'Sataniel',
     lastName: 'Demonieiro'
   }
 
-  pessoaDois = {
+  var pessoaDois = {
     name: 'Luciferina',
     lastName: 'Infernandes'
   }
