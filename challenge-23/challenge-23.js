@@ -53,16 +53,17 @@
         $input.value = allValues.reduce(function(accumulated, actual) {
             var firstValue = accumulated.slice(0, -1);
             var operator = accumulated.split('').pop();
-            var lastValue = actual;
+            var lastValue = remove(actual);
+            var lastOperator = isLast(actual) ? actual.split('').pop() : false;
             switch(operator) {
                 case '+':
-                    return Number(firstValue) + Number(lastValue);
+                    return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
                 case '-':
-                    return Number(firstValue) - Number(lastValue);
+                    return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
                 case '*':
-                    return Number(firstValue) * Number(lastValue);
+                    return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
                 case '/':
-                    return Number(firstValue) / Number(lastValue);
+                    return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
             }
         });
     }
