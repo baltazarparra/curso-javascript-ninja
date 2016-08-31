@@ -1,4 +1,4 @@
-(function(doc, win){
+(function(){
 
     'use strict';
 
@@ -79,6 +79,6 @@
         || Object.prototype.toString.call(param) === '[object Undefined]';
     }
 
-    console.log(DOM.prototype.isArray([1,2,3]));
+    window.DOM = DOM;
 
-})(document, window);
+})();
